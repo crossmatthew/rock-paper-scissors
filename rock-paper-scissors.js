@@ -45,7 +45,7 @@ function playGame(numOfRounds = 5) {
   for (let i = 0; i < numOfRounds; i++) {
     let games = playRound(prompt(`Let's Play Rock Paper Scissors!`), getComputerChoice());
     if (games.includes('Win')) {
-        playerWins++
+      playerWins++
     }
     if (games.includes('Lose')) {
       computerWins++
@@ -54,7 +54,17 @@ function playGame(numOfRounds = 5) {
       ties++
     }
   }
-  return console.log(`Player's wins:`, playerWins, `Computer's wins:`, computerWins, `Ties:`, ties);
+  let scoreboard = `Player's wins: ${playerWins}, Computer's wins: ${computerWins}, Ties: ${ties}, Rounds Played: ${numOfRounds} ##### `
+  if (playerWins > computerWins) {
+    scoreboard += ' Player Wins!'
+  }
+  if (computerWins > playerWins) {
+    scoreboard += " Computer Wins!";
+  }
+  if (playerWins === computerWins) {
+    scoreboard += "Tied! No Winner!";
+  }
+  console.log(scoreboard);
 }
 
 playGame();
