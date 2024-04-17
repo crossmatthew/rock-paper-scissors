@@ -41,12 +41,20 @@ function playRound(playerSelection, computerSelection) {
 function playGame(numOfRounds = 5) {
   let playerWins = 0;
   let computerWins = 0;
+  let ties = 0;
   for (let i = 0; i < numOfRounds; i++) {
-    if (playRound(prompt(), getComputerChoice()).includes("Win")) {
-        playerWins++;
+    let games = playRound(prompt(`Let's Play Rock Paper Scissors!`), getComputerChoice());
+    if (games.includes('Win')) {
+        playerWins++
+    }
+    if (games.includes('Lose')) {
+      computerWins++
+    }
+    if (games.includes('tie')) {
+      ties++
     }
   }
-  return console.log(playerWins);
+  return console.log(`Player's wins:`, playerWins, `Computer's wins:`, computerWins, `Ties:`, ties);
 }
 
 playGame();
