@@ -1,9 +1,3 @@
-// const rockButton = document.querySelector('#rock');
-// const paperButton = document.querySelector("#paper");
-// const scissorsButton = document.querySelector("#scissors");
-
-// rockButton.addEventListener('click', playRound('rock', getComputerChoice()));
-
 function getComputerChoice() {
   const choice = ["Rock", "Paper", "Scissors"];
   return choice[Math.floor(Math.random() * 3)];
