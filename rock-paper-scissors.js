@@ -67,4 +67,4 @@ function playGame(numOfRounds = 5) {
   console.log(scoreboard);
 }
 
-playGame();
+playGame(1);
