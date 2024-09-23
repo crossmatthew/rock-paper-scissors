@@ -56,8 +56,7 @@ function playGame(numOfRounds = 0) {
   }
   if (
     scoreboard.playerWins === scoreboard.computerWins &&
-    scoreboard.playerWins !== 0 &&
-    scoreboard.computerWins !== 0) {
+    scoreboard.playerWins !== 0) {
     console.log("Tied! No Winner!");
   }
 }
