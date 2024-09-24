@@ -13,36 +13,39 @@ function playGame(numOfRounds = 0) {
     ties: 0
   }
   function playRound(playerSelection, computerSelection) {
+    div.textContent = numOfRounds
+    let winMessage = ` You Win! ${playerSelection} beats ${computerSelection}`;
+    let loseMessage = ` You Lose! ${computerSelection} beats ${playerSelection}`;
     numOfRounds++;
     if (playerSelection === computerSelection) {
       scoreboard.ties++;
-      div.textContent = `It's a tie`;
+      div.textContent += ` It's a tie`;
     } else {
       if (playerSelection === "Rock") {
         if (computerSelection !== "Paper") {
           scoreboard.playerWins++;
-          div.textContent = `You Win! Rock beats ${computerSelection}`;
+          div.textContent += winMessage;
         } else {
           scoreboard.computerWins++;
-          div.textContent = `You Lose! ${computerSelection} beats Rock`;
+          div.textContent += loseMessage;
         }
       }
       if (playerSelection === "Paper") {
         if (computerSelection !== "Scissors") {
           scoreboard.playerWins++;
-          div.textContent = `You Win! Paper beats ${computerSelection}`;
+          div.textContent += winMessage;
         } else {
           scoreboard.computerWins++;
-          div.textContent = `You Lose! ${computerSelection} beats Paper`;
+          div.textContent += loseMessage;
         }
       }
       if (playerSelection === "Scissors") {
         if (computerSelection !== "Rock") {
           scoreboard.playerWins++;
-          div.textContent = `You Win! Scissors beat ${computerSelection}`;
+          div.textContent += winMessage;
         } else {
           scoreboard.computerWins++
-          div.textContent = `You Lose! ${computerSelection} beat Scissors`;
+          div.textContent += loseMessage;
         } 
       }
     }
