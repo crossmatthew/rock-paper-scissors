@@ -1,8 +1,5 @@
 const buttons = document.querySelectorAll('button');
 const div = document.querySelector('div');
-const unorderedList = document.createElement('ul')
-const listItem = document.createElement('li');
-unorderedList.appendChild(listItem);  
 
 function getComputerChoice() {
   const choice = ["Rock", "Paper", "Scissors"];
@@ -16,16 +13,13 @@ function playGame(numOfRounds = 0) {
     ties: 0
   }
   function playRound(playerSelection, computerSelection) {
-    const textNode = document.createTextNode(numOfRounds);
-    listItem.appendChild(textNode);
-    div.appendChild(unorderedList);
-    // div.textContent = numOfRounds;
+    div.textContent = `Rounds Played: ${numOfRounds} Ties: ${scoreboard.ties} Player's Wins: ${scoreboard.playerWins} Computer's Wins: ${scoreboard.computerWins}`;
     let winMessage = ` You Win! ${playerSelection} beats ${computerSelection}`;
     let loseMessage = ` You Lose! ${computerSelection} beats ${playerSelection}`;
     numOfRounds++;
     if (playerSelection === computerSelection) {
       scoreboard.ties++;
-      // div.textContent += ` It's a tie`;
+      div.textContent += ` It's a tie`;
     } else {
       if (playerSelection === "Rock") {
         if (computerSelection !== "Paper") {
