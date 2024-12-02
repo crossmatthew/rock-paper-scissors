@@ -13,10 +13,10 @@ function playGame(numOfRounds = 0) {
     ties: 0
   }
   function playRound(playerSelection, computerSelection) {
+    numOfRounds++;
     div.textContent = `Rounds Played: ${numOfRounds} Ties: ${scoreboard.ties} Player's Wins: ${scoreboard.playerWins} Computer's Wins: ${scoreboard.computerWins}`;
     let winMessage = ` You Win! ${playerSelection} beats ${computerSelection}`;
     let loseMessage = ` You Lose! ${computerSelection} beats ${playerSelection}`;
-    numOfRounds++;
     if (playerSelection === computerSelection) {
       scoreboard.ties++;
       div.textContent += ` It's a tie`;
